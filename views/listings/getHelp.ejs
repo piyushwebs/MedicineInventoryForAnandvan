@@ -1,0 +1,32 @@
+<% layout("/layout/boilerplate.ejs")%>
+<br />
+<form
+  method="POST"
+  action="/swasthyasetu/getHelp?_method=PUT"
+  novalidate
+  class="needs-validation"
+>
+  <div class="input-group mb-3 inputField">
+    <label for="prompt" class="form-label"></label>
+    <input
+        id="prompt"
+      type="text"
+      class="form-control "
+      placeholder="What are you looking for.."
+      name="input"
+      autocomplete="off"
+      required
+    />
+    <button class="btn btn-outline-primary">Search</button>
+    <div class="invalid-feedback">Enter Valid Prompt!</div>
+  </div>
+
+</form>
+<% if(input != "") {%>
+  <i>prompt:- </i>
+  <div class="Input"><%=input%></div>
+  <i>Solu:- </i>
+  <div class="Output">
+    <%=value%>
+  </div>
+<%}%>

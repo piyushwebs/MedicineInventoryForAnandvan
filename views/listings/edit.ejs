@@ -1,0 +1,113 @@
+<% layout("/layout/boilerplate") %>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Edit your List</h3>
+    <form
+      method="POST"
+      action="/swasthyasetu/<%= listings._id %>?_method=PUT"
+      novalidate
+      class="needs-validation"
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          name="listing[name]"
+          value="<%= listings.name %>"
+          type="text"
+          class="form-control"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          rows="10"
+          cols="50"
+          type="text"
+          class="form-control"
+          autocomplete="off"
+          required
+        >
+<%= listings.description %></textarea
+        >
+        <div class="invalid-feedback">Enter short description</div>
+      </div>
+
+      <div class="mb-3" style="height: max-content; width: max-content">
+        Medicine Image <br />
+        <img
+          style="height: 400px; width: 400px"
+          src="<%= listings.image.url %>"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image url</label>
+        <input
+          name="listing[image][url]"
+          type="String"
+          class="form-control"
+          autocomplete="off"
+          value="<%= listings.image.url%>"
+        />
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">price</label>
+          <input
+            name="listing[price]"
+            value="<%=listings.price %>"
+            type="number"
+            class="form-control"
+            autocomplete="off"
+            required
+            
+          />
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="location" class="from-label mb-2"
+            >quantity-Available</label
+          >
+          <input
+            name="listing[quantityAvailable]"
+            value="<%=listings.quantityAvailable %>"
+            type="number"
+            class="form-control"
+            autocomplete="off"
+            required
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="country" class="form-label">Manufacturing-Date</label>
+          <input
+            name="listing[manufactureDate]"
+            value="<%=listings.manufactureDate %>"
+            type="date"
+            class="form-control"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="mb-3 col-md-4">
+          <label for="location" class="from-label mb-2">Expiry-Date</label>
+          <input
+            name="listing[expiryDate]"
+            value="<%=listings.expiryDate %>"
+            type="date"
+            class="form-control"
+            autocomplete="off"
+            required
+          />
+        </div>
+      </div>
+      <button class="btn btn-outline-success edit-btn mb-3">Update</button>
+    </form>
+  </div>
+</div>

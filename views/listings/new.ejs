@@ -1,0 +1,95 @@
+<% layout("/layout/boilerplate") %>
+<br>
+<h3>Add new Medicine</h3>
+<form
+  method="POST"
+  action="/swasthyasetu"
+  novalidate
+  class="needs-validation">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      name="listing[name]"
+      id="name"
+      placeholder="add name of the medicine"
+      type="text"
+      class="form-control"
+      autocomplete="off"
+      required
+    />
+    <div class="valid-feedback">name of medicine!</div>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      name="listing[description]"
+      type="text"
+      class="form-control"
+      id="description"
+      autocomplete="off"
+      required
+    ></textarea>
+    <div class="invalid-feedback">Please enter a short description about medicine!</div>
+  </div>
+  <div class="mb-3">
+    <label for="manufactureDate" class="form-label">Manufacturing-Date</label>
+    <input
+    id="manufactureDate"
+      name="listing[manufactureDate]"
+      placeholder="DD/MM/YY"
+      type="date"
+      class="form-control"
+      required
+    />
+    <div class="invalid-feedback">Please enter valid manufacturing date</div>
+  </div>
+  <div class="mb-3">
+    <label for="expiryDate" class="form-label">Expiry-Date</label>
+    <input
+      name="listing[expiryDate]"
+      id="expiryDate"
+      placeholder="DD/MM/YY"
+      type="date"
+      autocomplete="off"
+      class="form-control"
+      required
+    />
+    <div class="invalid-feedback">Please enter valid expiry date</div>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Medicine image link</label>
+    <input id="image" name="listing[image][url]" type="string" class="form-control" autocomplete="off" required/>
+    <div class="invalid-feedback">Please enter valid Imgae URL</div>
+  </div>
+  <div class="row">
+    <div class="mb-3 col-md-4">
+      <label for="price" class="form-label">Price per Set</label>
+      <input
+        name="listing[price]"
+        id="price"
+        placeholder="1200"
+        type="number"
+        class="form-control"
+        autocomplete="off"
+        required
+      />
+      <div class="invalid-feedback">Price should be valid!</div>
+    </div>
+
+    <div class="mb-3 col-md-8">
+      <label for="quantityAvailable" class="form-label">Quantity Available</label>
+      <input
+        id="quantityAvailable"
+        name="listing[quantityAvailable]"
+        placeholder="500"
+        type="number"
+        class="form-control"
+        autocomplete="off"
+        required
+      />
+      <div class="invalid-feedback">Quantity available should be valid!</div>
+    </div>
+  </div>
+  <button class="btn addBtn ">Add</button>
+  <br /><br />
+</form>
