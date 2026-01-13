@@ -3,7 +3,7 @@ const initData = require("./data.js");
 const listing = require("../models/medicineList.js");
 
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/MedicinalInventory";
+const MONGO_URL = "";//Add your mongoDB URL
 
 async function main()
 {
