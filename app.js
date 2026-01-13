@@ -14,7 +14,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/MedicinalInventory";
+const MONGO_URL = "";
 
 async function main() {
   mongoose.connect(MONGO_URL);
