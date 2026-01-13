@@ -97,7 +97,7 @@ app.get("/swasthyasetu/getHelp", async (req, res) => {
 app.put("/swasthyasetu/getHelp", async (req, res) => {
   let input = req.body.input;
   const genAI = new GoogleGenerativeAI(
-    "AIzaSyCMo1jOK-dAjYPOqXG6KYf7z9flE0iFgr4"
+    ""//enter your gemini key
   );
   const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
   let value = "";
